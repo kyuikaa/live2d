@@ -55,12 +55,6 @@ const tools = {
             Live2D.captureFrame = true;
         }
     },
-    "info": {
-        icon: fa_info_circle,
-        callback: () => {
-            open("https://github.com/stevenjoezhang/live2d-widget");
-        }
-    },
     "quit": {
         icon: fa_xmark,
         callback: () => {

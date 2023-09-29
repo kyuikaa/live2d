@@ -13,7 +13,7 @@ function showHitokoto() {
     fetch("https://v1.hitokoto.cn")
         .then(response => response.json())
         .then(result => {
-            const text = `这句一言来自 <span>「${result.from}」</span>，是 <span>${result.creator}</span> 在 hitokoto.cn 投稿的。`;
+            const text = `This sentence comes from <span>「${result.from}」</span>，yes <span>${result.creator}</span> exist hitokoto.cn Post-like.`;
             showMessage(result.hitokoto, 6000, 9);
             setTimeout(() => {
                 showMessage(text, 4000, 9);
@@ -50,16 +50,21 @@ const tools = {
     "photo": {
         icon: fa_camera_retro,
         callback: () => {
-            showMessage("照好了嘛，是不是很可爱呢？", 6000, 9);
+            showMessage("The photo is done. Isn’t it cute?", 6000, 9);
             Live2D.captureName = "photo.png";
             Live2D.captureFrame = true;
         }
     },
+    "info": {
+        icon: fa_info_circle,
+        callback: () => {
+            open("https://rin4ever.xyz");
+        }
     "quit": {
         icon: fa_xmark,
         callback: () => {
             localStorage.setItem("waifu-display", Date.now());
-            showMessage("愿你有一天能与重要的人重逢。", 2000, 11);
+            showMessage("May you reunite with your special someone one day.", 2000, 11);
             document.getElementById("waifu").style.bottom = "-500px";
             setTimeout(() => {
                 document.getElementById("waifu").style.display = "none";
